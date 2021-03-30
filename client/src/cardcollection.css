@@ -1,0 +1,16 @@
+.card-collection {
+    background-color: #dadada;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow-x: hidden;
+    padding-top: 2vh;
+    padding-bottom: 2vw;
+}
+
+.hidden {
+    display: none;
+  }

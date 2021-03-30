@@ -1,0 +1,26 @@
+{
+  "name": "ian-card",
+  "version": "1.0.0",
+  "description": "Collectable Ian Card",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "start-client": "cd client && npm start",
+    "build": "cd client && npm install && npm run build",
+    "build-swagger": "cd cli && npm install && node swagger.js",
+    "build-db": "node db-builder.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ian Drake",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "pg": "^8.5.1",
+    "random": "^3.0.3",
+    "swagger-jsdoc": "^7.0.0-rc.6",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
