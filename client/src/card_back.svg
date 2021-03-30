@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="132.29166mm"
+   height="176.38712mm"
+   viewBox="0 0 132.29166 176.38712"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="card_back.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="37.490623"
+       y="167.47787"
+       width="180.63866"
+       height="125.88375"
+       id="rect860" />
+    <rect
+       x="44.613213"
+       y="51.735802"
+       width="125.98079"
+       height="48.077477"
+       id="rect843" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.94525015"
+     inkscape:cx="390.3403"
+     inkscape:cy="286.09993"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid873"
+       originx="-5.4867172e-08"
+       originy="-5.4867172e-08" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1.2384523,1.2384523)">
+    <rect
+       style="fill:#d29f6c;fill-opacity:1;stroke:#000000;stroke-width:0.588401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12"
+       width="131.70326"
+       height="175.79872"
+       x="-0.94425184"
+       y="-0.94425184" />
+    <rect
+       style="fill:#79442d;fill-opacity:1;stroke:#000000;stroke-width:0.771324;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect837"
+       width="122.47282"
+       height="167.43349"
+       x="3.9932029"
+       y="3.9937558" />
+    <ellipse
+       style="fill:#44423e;fill-opacity:1;stroke:#000000;stroke-width:0.771324;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path841"
+       cx="66.206055"
+       cy="89.427094"
+       rx="30.687952"
+       ry="53.214272" />
+    <text
+       xml:space="preserve"
+       id="text841"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect843);fill:#000000;fill-opacity:1;stroke:none;" />
+    <g
+       aria-label="Ian"
+       id="text849"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;line-height:1.25;font-family:'Open Cherry';-inkscape-font-specification:'Open Cherry';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       transform="matrix(0.62669659,0,0,0.59324654,-0.74948039,0.82466782)">
+      <path
+         d="M 21.648024,16.700381 H 38.615223 V 105.60038 H 21.648024 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path851" />
+      <path
+         d="m 57.411127,43.929181 v 16.6624 l 10.2616,-2.9464 v -13.716 z m -13.716,-3.4544 q 0,-2.8448 1.9304,-4.7752 2.032,-2.032 4.8768,-2.032 h 30.8864 v 71.932799 h -13.716 v -33.7312 l -10.2616,2.8448 v 30.8864 h -13.716 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path853" />
+      <path
+         d="m 124.16228,33.667581 v 71.932799 h -13.716 V 48.399581 l -10.2616,-4.4704 V 105.60038 H 86.468679 V 33.667581 h 13.716001 l 10.2616,4.3688 v -4.3688 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path855" />
+    </g>
+    <g
+       aria-label="Card"
+       transform="matrix(0.62669659,0,0,0.59324654,-13.80896,7.3233249)"
+       id="text858"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;line-height:1.25;font-family:'Open Cherry';-inkscape-font-specification:'Open Cherry';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect860);fill:#000000;fill-opacity:1;stroke:none">
+      <path
+         d="m 72.237434,197.95852 v -12.7 h -12.7 v 63.49999 h 12.7 v -12.7 l 16.8656,-8.4328 v 33.8328 h -38.1 q -3.4544,0 -5.9944,-2.4384 -2.4384,-2.54 -2.4384,-5.9944 v -80.46719 h 46.5328 v 16.9672 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry'"
+         id="path864" />
+      <path
+         d="m 107.89897,199.78732 v 16.66239 l 10.2616,-2.9464 v -13.71599 z m -13.715996,-3.4544 q 0,-2.8448 1.9304,-4.7752 2.032,-2.032 4.876796,-2.032 h 30.8864 v 71.93279 h -13.716 v -33.7312 l -10.2616,2.8448 v 30.8864 H 94.182974 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry'"
+         id="path866" />
+      <path
+         d="m 160.93413,210.04891 v -10.26159 h -10.2616 v 17.17039 z m 13.716,-13.61439 v 17.06879 l -13.0048,10.2616 5.1816,14.224 7.8232,23.4696 h -13.716 l -3.048,-10.2616 -7.2136,-19.304 v 29.5656 h -13.716 v -71.93279 h 30.7848 q 2.8448,0 4.8768,2.032 2.032,2.032 2.032,4.8768 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry'"
+         id="path868" />
+      <path
+         d="m 203.70769,251.19691 v -51.40959 h -10.2616 v 51.40959 z m 6.80719,-61.67119 q 2.8448,0 4.7752,2.032 2.032,1.9304 2.1336,4.7752 v 58.31839 q 0,2.8448 -2.032,4.8768 -2.032,1.9304 -4.8768,1.9304 h -30.78479 v -71.93279 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.6px;font-family:'Golden Sentry';-inkscape-font-specification:'Golden Sentry'"
+         id="path870" />
+    </g>
+  </g>
+</svg>
