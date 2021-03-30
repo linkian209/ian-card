@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server/index.js",
     "start-client": "cd client && npm start",
-    "build": "cd client && npm install && npm run build",
-    "build-swagger": "cd cli && npm install && node swagger.js",
+    "build": "cd client && npm update && npm run build",
+    "build-swagger": "cd cli && npm update && node swagger.js",
     "build-db": "node db-builder.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
