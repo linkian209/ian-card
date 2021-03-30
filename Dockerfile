@@ -1,9 +1,9 @@
-FROM node:12.21.0-alpine3.12 AS client-builder
+FROM node:12.21.0-alpine3.12 AS client
 WORKDIR /app
 COPY ./client .
 RUN npm install --only-production && npm run build
 
-FROM node:12.21.0-alpine3.12 AS swagger-builder
+FROM node:12.21.0-alpine3.12 AS swagger
 WORKDIR /app
 COPY ./package.json ./
 COPY ./cli ./cli
@@ -16,7 +16,7 @@ EXPOSE 3001
 COPY ./package.json ./
 COPY ./server ./server
 COPY ./.env ./
-COPY --from=client-builder /app/build ./client/build
-COPY --from=swagger-builder /app/swagger.json ./
+COPY --from=client /app/build ./client/build
+COPY --from=swagger /app/swagger.json ./
 RUN npm install
 CMD ["npm", "start"]
