@@ -17,7 +17,7 @@ EXPOSE 3001
 COPY ./package.json ./
 COPY ./server ./server
 COPY ./.env ./
-COPY --from=client-builder /app/client/build ./client/build
+COPY --from=client-builder /app/build ./client/build
 COPY --from=swagger-builder /app/swagger.json ./
 RUN npm install
 CMD ["npm", "start"]
