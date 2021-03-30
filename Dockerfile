@@ -1,8 +1,7 @@
 FROM node:12.21.0-alpine3.12
 WORKDIR /app
 COPY ./client .
-RUN npm update
-RUN npm run build
+RUN npm install --only-production && npm run build
 
 FROM node:12.21.0-alpine3.12 AS swagger-builder
 WORKDIR /app
