@@ -1,7 +1,7 @@
 FROM node:lts-alpine3.13 AS client-builder
 WORKDIR /app
 COPY ./client .
-RUN npm install
+RUN npm update
 RUN npm run build
 
 FROM node:lts-alpine3.13 AS swagger-builder
