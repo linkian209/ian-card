@@ -1,4 +1,4 @@
-FROM node:12.21.0-alpine3.12
+FROM node:12.21.0-alpine3.12 AS client-builder
 WORKDIR /app
 COPY ./client .
 RUN npm install --only-production && npm run build
