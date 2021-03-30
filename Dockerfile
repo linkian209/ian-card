@@ -1,17 +1,17 @@
-FROM node:15.12.0-alpine3.13
+FROM node:12.21.0-alpine3.12
 WORKDIR /app
 COPY ./client .
 RUN npm update
 RUN npm run build
 
-FROM node:15.12.0-alpine3.13 AS swagger-builder
+FROM node:12.21.0-alpine3.12 AS swagger-builder
 WORKDIR /app
 COPY ./package.json ./
 COPY ./cli ./cli
 COPY ./server ./server
 RUN npm run build-swagger
 
-FROM node:15.12.0-alpine3.13
+FROM node:12.21.0-alpine3.12
 WORKDIR /app
 EXPOSE 3001
 COPY ./package.json ./
