@@ -1,0 +1,13 @@
+{
+    "defaultEnv": "local",
+    "local": {
+        "driver": "pg",
+        "user": {"ENV": "DB_API_USER"},
+        "password": {"ENV": "DB_API_PASS"},
+        "host": {"ENV": "DB_HOST"},
+        "database": {"ENV": "DB_API_DB"},
+        "port": {"ENV": "DB_PORT"},
+        "ssl": "true",
+        "schema": "public"
+    }
+}

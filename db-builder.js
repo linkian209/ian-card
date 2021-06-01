@@ -53,13 +53,84 @@ var collection_table_create = 'CREATE TABLE collection (' +
                                 'CONSTRAINT pk_collection PRIMARY KEY (user_id, card_id)'
                               ')';
 
+var announcement_table_create = 'CREATE TABLE announcement (' +
+                                  'id SERIAL PRIMARY KEY, ' +
+                                  'title TEXT NOT NULL, ' +
+                                  'body TEXT NOT NULL, ' +
+                                  'date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP' +
+                                ')';
+
 var series_table_create = 'CREATE TABLE series (' +
                             'id SERIAL PRIMARY KEY, ' +
                             'name VARCHAR(64) NOT NULL, ' +
+                            'card_back TEXT NOT NULL, ' +
                             'create_ts TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP' +
                           ')';
 
 // This whole operation will take place in a series of callbacks
+function make_tables(client)
+{
+    // Now make the user table
+    api_client.query(
+        user_table_create,
+        (err, results) => {
+            if(err)
+            {
+                console.log("Error creating users table! " + err.message);
+            }
+
+            // Now make the series table
+            api_client.query(
+                series_table_create,
+                (err, results) => {
+                    if(err)
+                    {
+                        console.log("Error making the series table " + err.message);
+                    }
+
+                    // Make card table
+                    api_client.query(
+                        card_table_create,
+                        (err, results) => {
+                            if(err)
+                            {
+                                console.log("Error making card table! " + err.message);
+                            }
+
+                            // Now make series table
+                            api_client.query(
+                                collection_table_create,
+                                (err, results) => {
+                                    if(err)
+                                    {
+                                        console.log("Error making collection table! " + err.message);
+                                    }                
+
+                                    // Now make announcement table
+                                    api_client.query(
+                                        announcement_table_create,
+                                        (err, results) => {
+                                            if(err)
+                                            {
+                                                console.log("Error making announcement table!" + err.message);
+                                            }
+
+                                            // Done!
+                                            console.log("DB Creation done.");
+
+                                            api_client.end();
+                                            return;
+                                        }
+                                    );
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+        }
+    );
+}
 
 // Start off by making the user
 const client = new Client(super_opts);
@@ -116,55 +187,7 @@ client.connect(err => {
                                         return;
                                     }
 
-                                    // Now make the user table
-                                    api_client.query(
-                                        user_table_create,
-                                        (err, results) => {
-                                            if(err)
-                                            {
-                                                console.log("Error creating users table! " + err.message);
-                                            }
-
-                                            // Now make the series table
-                                            api_client.query(
-                                                series_table_create,
-                                                (err, results) => {
-                                                    if(err)
-                                                    {
-                                                        console.log("Error making the series table " + err.message);
-                                                    }
-
-                                                    // Make card table
-                                                    api_client.query(
-                                                        card_table_create,
-                                                        (err, results) => {
-                                                            if(err)
-                                                            {
-                                                                console.log("Error making card table! " + err.message);
-                                                            }
-
-                                                            // Now make series table
-                                                            api_client.query(
-                                                                collection_table_create,
-                                                                (err, results) => {
-                                                                    if(err)
-                                                                    {
-                                                                        console.log("Error making collection table! " + err.message);
-                                                                    }                
-                                                                    
-                                                                    // Done!
-                                                                    console.log("DB Creation done.");
-
-                                                                    api_client.end();
-                                                                    return;
-                                                                }
-                                                            );
-                                                        }
-                                                    );
-                                                }
-                                            );
-                                        }
-                                    );
+                                    make_tables(api_client);
                                 });
                             }
                         );

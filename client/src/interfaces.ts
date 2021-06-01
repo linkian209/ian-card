@@ -4,6 +4,11 @@ export interface UserCollection {
     quantity: number;
 }
 
+export interface OrderedSeries {
+  [key: number]: Series;
+}
+
+
 export interface CardQty {
     [key: string]: number;
 }
@@ -23,6 +28,7 @@ export enum Rarity {
 export interface Series {
     id: number;
     name: string;
+    card_back: string;
     create_ts: string;
 }
 
@@ -35,6 +41,7 @@ export interface Card {
     artist: string;
     shiny: boolean;
     series: number;
+    color: string;
     quantity?: number;
     acquire_ts?: string;
 }
@@ -43,4 +50,11 @@ export interface UserCollectionQty {
     card: Card;
     quantity: number;
     acquire_ts: string;
+}
+
+export interface Announcement {
+    id: number;
+    title: string;
+    date: Date;
+    body: string;
 }

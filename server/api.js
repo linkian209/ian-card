@@ -118,6 +118,9 @@ api_router.get("/", (req, res) => {
  *                              username:
  *                                  type: string
  *                                  description: Username
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
  */
 /**
  * @swagger
@@ -151,6 +154,9 @@ api_router.get("/", (req, res) => {
  *                              username:
  *                                  type: string
  *                                  description: Username
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
  */
 /**
  * @swagger
@@ -168,6 +174,9 @@ api_router.get("/", (req, res) => {
  *      responses:
  *          201:
  *              description: Success
+ *              content: {}
+ *          400:
+ *              description: Malformed payload
  *              content: {}
  */
 api_router.get('/user/:id', db.getUserById);
@@ -283,6 +292,9 @@ api_router.delete('/user/:id', db.deleteUser);
  *          201:
  *              description: Sucess
  *              content: {}
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
  */
 /**
  * @swagger
@@ -317,6 +329,9 @@ api_router.delete('/user/:id', db.deleteUser);
  *                  application/json:
  *                      schema:
  *                          $ref: "#/components/schemas/Collection"
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
  */
 /**
  * @swagger
@@ -353,6 +368,9 @@ api_router.delete('/user/:id', db.deleteUser);
  *                  application/json:
  *                      schema:
  *                          $ref: "#/components/schemas/Collection"
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
  */
 /**
  * @swagger
@@ -376,6 +394,9 @@ api_router.delete('/user/:id', db.deleteUser);
  *          201:
  *              description: Sucess
  *              content: {}
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
  */
 /**
  * @swagger
@@ -393,6 +414,9 @@ api_router.delete('/user/:id', db.deleteUser);
  *      responses:
  *          201:
  *              description: Sucess
+ *              content: {}
+ *          400:
+ *              description: Malformed payload
  *              content: {}
  */
 /**
@@ -473,6 +497,9 @@ api_router.delete('/collection/:id/:card', db.removeCardFromCollection);
  *          shiny:
  *              type: boolean
  *              description: Is the card shiny or not
+ *          color:
+ *              type: string
+ *              description: Card color 
  *          series:
  *              type: integer
  *              format: int64
@@ -543,10 +570,39 @@ api_router.delete('/collection/:id/:card', db.removeCardFromCollection);
  *          content:
  *              application/json:
  *                  schema:
- *                      $ref: "#/components/schemas/Card"
+ *                      properties:
+ *                        name:
+ *                            type: string
+ *                            description: Card Name
+ *                        description:
+ *                            type: string
+ *                            description: Text that appears on card
+ *                        img:
+ *                            type: string
+ *                            description: Path of card image
+ *                        rarity:
+ *                            type: integer
+ *                            format: int64
+ *                            description: Rarity of the card
+ *                        artist:
+ *                            type: string
+ *                            description: Artist of card image
+ *                        shiny:
+ *                            type: boolean
+ *                            description: Is the card shiny or not
+ *                        color:
+ *                            type: string
+ *                            description: Card color
+ *                        series:
+ *                            type: integer
+ *                            format: int64
+ *                            description: Series the card is a part of
  *      responses:
  *          201:
  *              description: Sucess
+ *              content: {}
+ *          400:
+ *              description: Malformed payload
  *              content: {}
  */
 api_router.get('/card', db.getAllCards);
@@ -577,6 +633,9 @@ api_router.post('/card/new', db.newCard);
  *          name:
  *              type: string
  *              description: Series Name
+ *          card_back:
+ *              type: string
+ *              description: Path to card back for series
  *          create_ts:
  *              type: string
  *              description: Series creation timestamp
@@ -614,9 +673,15 @@ api_router.post('/card/new', db.newCard);
  *                          name:
  *                              type: string
  *                              description: New Series
+ *                          card_back:
+ *                              type: string
+ *                              description: Path to card back
  *      responses:
  *          201:
  *              description: Success
+ *              content: {}
+ *          400:
+ *              description: Malformed payload
  *              content: {}
  */
 /**
@@ -639,14 +704,86 @@ api_router.post('/card/new', db.newCard);
  *              content:
  *                  application/json:
  *                      schema:
- *                          type: array
- *                          items:
- *                              $ref: "#/components/schemas/Series"
+ *                          $ref: "#/components/schemas/Series"
  */
 api_router.get('/series', db.getAllSeries);
 api_router.post('/series/new', db.newSeries);
 api_router.get('/series/:id', db.getSeriesById);
 
+/* Announcement Routes */
+/**
+ * @swagger
+ * tags:
+ *  name: Announcement
+ *  description: Announcement management
+ */
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *      Annoucement:
+ *        type: object
+ *        properties:
+ *          id:
+ *              type: integer
+ *              format: int64 
+ *              description: Announcement ID
+ *          title:
+ *              type: string
+ *              description: title of announcement
+ *          date:
+ *              type: string
+ *              description: Timestamp of announcement
+ *          body:
+ *              type: string
+ *              description: Body of announcement
+ */
+/**
+ * @swagger
+ * /announcement:
+ *  get:
+ *      tags: [Announcement]
+ *      description: Get all announcements
+ *      operationId: getAnnouncements
+ *      responses:
+ *          200:
+ *              description: The Announcements
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: array
+ *                          items:
+ *                              $ref: "#/components/schemas/Annoucement"
+ */ 
+/**
+ * @swagger
+ * /announcement/new:
+ *  post:
+ *      tags: [Announcement]
+ *      description: Post new announcement
+ *      operationId: newAnnouncement
+ *      requestBody:
+ *          description: New Announcement
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      properties:
+ *                          title:
+ *                              type: string
+ *                              description: Announcement Title
+ *                          body:
+ *                              type: string
+ *                              description: Announcement Body
+ *      responses:
+ *          201:
+ *              description: Success
+ *              content: {}
+ *          400:
+ *              description: Malformed payload
+ *              content: {}
+ */ 
+api_router.get('/announcement', db.getAnnouncements);
+api_router.post('/announcement/new', db.newAnnouncement);
 
 /* 404 */
 api_router.get('*', noRoute);

@@ -3,11 +3,12 @@ import IanCard from "./IanCard";
 import "./cardcollection.css";
 import {CardDeck, Button, ButtonGroup, ToggleButton, ButtonToolbar} from "react-bootstrap";
 // @ts-ignore
-import {UserCollectionQty, Card} from "interfaces.ts";
+import {UserCollectionQty, Card, OrderedSeries} from "interfaces.ts";
 
 interface CardCollectionProps {
     visible: Boolean;
     cardCollection: UserCollectionQty[];
+    series: OrderedSeries;
     updateCallback: Function;
 }
 
@@ -66,7 +67,7 @@ function CardCollection(props: CardCollectionProps) {
     var cardDecks = new Array<any>();
     var numCards = cards.length;
     var userCards = cards.map((data: Card, idx: number) => 
-        <IanCard key={idx} card={data}  />
+        <IanCard card={data} card_back={props.series[data.series].card_back} />
     );
 
     for(var jj = 0; jj < numCards; jj += 3)

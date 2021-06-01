@@ -1,0 +1,34 @@
+.home-page {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+.welcome {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.announcements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}

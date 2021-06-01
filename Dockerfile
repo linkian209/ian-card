@@ -18,5 +18,5 @@ COPY ./server ./server
 COPY ./.env ./
 COPY --from=client /app/build ./client/build
 COPY --from=swagger /app/swagger.json ./
-RUN npm install
+RUN npm install --only-production
 CMD ["npm", "start"]

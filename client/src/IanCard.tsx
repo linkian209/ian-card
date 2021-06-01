@@ -6,13 +6,13 @@ import uncommon from './u.svg';
 import rare from './r.svg';
 import srare from './sr.svg';
 import ssrare from './ssr.svg';
-import card_back from './card_back.svg';
 import './IanCard.css';
 // @ts-ignore
 import {Card as CardInterface, Rarity} from "./interfaces.ts";
 
 interface IanCardProps {
     card: CardInterface;
+    card_back: string;
     flipped?: boolean;
 }
 
@@ -43,7 +43,8 @@ function IanCard(props: IanCardProps) {
         <div className="card-contain" onClick={()=>{setFlip(!flip)}}>
             <div className={flip ? "card-inner flip" : "card-inner"}>
                 <div className="card-front">
-                    <Card bg="light" text="dark" className={(flip ? "" : "active") + " " + (props.card.shiny ? "shiny" : "")}>
+                    <Card bg={props.card.color} text={props.card.color === "light" ? "dark" : "light"}
+                          className={(flip ? "" : "active") + " " + (props.card.shiny ? "shiny" : "")}>
                         <Card.Img variant="top" src={props.card.img} />
                         <Card.Header>{props.card.name}</Card.Header>
                         <Card.Body>
@@ -60,7 +61,7 @@ function IanCard(props: IanCardProps) {
                     </Card>
                 </div>
                 <div className="card-back">
-                    <img src={card_back} alt="Card Back" />
+                    <img src={props.card_back} alt="Card Back" />
                 </div>
             </div>
         </div>  

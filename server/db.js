@@ -1,5 +1,6 @@
 const Pool = require("pg").Pool;
 require('dotenv').config();
+const uuid = require("uuid");
 const random = require('random');
 
 const pool = new Pool({
@@ -401,7 +402,7 @@ const getCard = (req, res) => {
 }
 
 const newCard = (req, res) => {
-    const id = req.body.id;
+    const id = uuid.v4(); 
     const name = req.body.name;
     const description = req.body.description;
     const img = req.body.img;
@@ -409,17 +410,18 @@ const newCard = (req, res) => {
     const artist = req.body.artist;
     const shiny = req.body.shiny;
     const series = req.body.series;
+    const color = req.body.color;
 
-    if(id === null || name === null || description === null || img === null ||
+    if(name === null || description === null || img === null || color === null ||
        rarity === null || artist === null || shiny === null || series === null)
     {
         res.sendStatus(400);
     }
 
     pool.query(
-        'INSERT INTO card (id, name, description, img, rarity, artist, shiny, series) ' +
-        'VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
-        [id, name, description, img, rarity, artist, shiny, series],
+        'INSERT INTO card (id, name, description, img, rarity, artist, shiny, series, color) ' +
+        'VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+        [id, name, description, img, rarity, artist, shiny, series, color],
         (error, results) => {
             if(error)
             {
@@ -571,15 +573,23 @@ const getAllSeries = (req, res) => {
 
 const newSeries = (req, res) => {
     const name = req.body.name;
+    const card_back = req.body.card_back;
 
     if(name === null)
     {
         res.sendStatus(400);
+        return;
+    }
+
+    if(card_back === null)
+    {
+        res.sendStatus(400);
+        return;
     }
 
     pool.query(
-      'INSERT INTO series(name) VALUES ($1)',
-      [name],
+      'INSERT INTO series(name, card_back) VALUES ($1, $2)',
+      [name, card_back],
       (error, results) => {
           if(error)
           {
@@ -617,6 +627,54 @@ const getSeriesById = (req, res) => {
     );
 }
 
+/* Announcement routes */
+const getAnnouncements = (req,  res) => {
+    pool.query(
+        'SELECT * FROM announcement ORDER BY date DESC',
+        (error, results) => {
+            if(error)
+            {
+                console.log(error);
+                res.sendStatus(500);
+                return;
+            }
+            res.status(200).json(results.rows);
+        }
+    );
+}
+
+const newAnnouncement = (req, res) => {
+    const title = req.body.title;
+    const body = req.body.body;
+
+    if(title === null)
+    {
+        res.sendStatus(400);
+        return;
+    }
+
+    if(body === null)
+    {
+        res.sendStatus(400);
+        return;
+    }
+
+    pool.query(
+        'INSERT INTO announcement (title, body) VALUES ($1, $2)',
+        [title, body],
+        (error, results) => {
+            if(error)
+            {
+                console.error(error);
+                res.sendStatus(500);
+                return;
+            }
+
+            res.sendStatus(201);
+        }
+    );
+}
+
 module.exports = {
     /* User Functions */
     getUserById,
@@ -641,5 +699,8 @@ module.exports = {
     /* Series Functions */
     getAllSeries,
     newSeries,
-    getSeriesById
+    getSeriesById,
+    /* Announcement Functions */
+    getAnnouncements,
+    newAnnouncement
 };

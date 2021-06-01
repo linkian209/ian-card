@@ -26,7 +26,8 @@ CREATE TABLE users
 CREATE TABLE series
 (
     id SERIAL PRIMARY KEY, 
-    name VARCHAR(64) NOT NULL, 
+    name VARCHAR(64) NOT NULL,
+    card_back TEXT NOT NULL,
     create_ts TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -52,5 +53,13 @@ CREATE TABLE collection
     CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE, 
     CONSTRAINT fk_card FOREIGN KEY(card_id) REFERENCES card(id) ON DELETE CASCADE, 
     CONSTRAINT pk_collection PRIMARY KEY (user_id, card_id)
+);
+
+CREATE TABLE announcement
+(
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL,
+    date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 EOSQL

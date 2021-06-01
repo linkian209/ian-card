@@ -8,7 +8,7 @@ import path from 'path';
       openapi: '3.0.0',
       info: {
         title: 'Ian Card',
-        version: '1.0.0'
+        version: '1.1.0'
       },
       servers: [
         {

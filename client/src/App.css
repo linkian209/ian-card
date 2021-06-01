@@ -17,8 +17,39 @@
   display: none;
 }
 
+.loading-contain {
+  background-color: #282c34;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-contain h1 {
+  width: 95%;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+}
+
+.loading-contain img {
+  animation: spin infinite 4s linear;
+}
+
 img[data-wobble='1'] {
   animation: wobble .5s 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes wobble {

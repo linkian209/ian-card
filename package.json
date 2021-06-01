@@ -1,6 +1,10 @@
 {
   "name": "ian-card",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linkian209/ian-card.git"
+  },
   "description": "Collectable Ian Card",
   "main": "server/index.js",
   "scripts": {
@@ -21,6 +25,10 @@
     "pg": "^8.5.1",
     "random": "^3.0.3",
     "swagger-jsdoc": "^7.0.0-rc.6",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "openapi-types": "^9.0.0"
   }
 }
