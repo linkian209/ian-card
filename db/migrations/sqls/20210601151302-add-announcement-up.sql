@@ -1,4 +1,4 @@
-CREATE TABLE announcement
+CREATE TABLE IF NOT EXISTS announcement
 (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,

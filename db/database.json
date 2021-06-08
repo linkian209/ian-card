@@ -7,7 +7,6 @@
         "host": {"ENV": "DB_HOST"},
         "database": {"ENV": "DB_API_DB"},
         "port": {"ENV": "DB_PORT"},
-        "ssl": "true",
         "schema": "public"
     }
 }

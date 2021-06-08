@@ -1,4 +1,4 @@
-CREATE TABLE card
+CREATE TABLE IF NOT EXISTS card
 (
     id uuid PRIMARY KEY, 
     name VARCHAR(64) NOT NULL, 

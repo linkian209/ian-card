@@ -1,4 +1,4 @@
-CREATE TABLE collection 
+CREATE TABLE IF NOT EXISTS collection 
 (
     user_id UUID NOT NULL, 
     card_id UUID NOT NULL, 
